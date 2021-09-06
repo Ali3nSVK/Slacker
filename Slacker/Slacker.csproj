@@ -80,6 +80,7 @@
     <Compile Include="Sources\SlackerSettings.cs" />
     <Compile Include="Sources\SystemTray.cs" />
     <Compile Include="Sources\ThreadHandler.cs" />
+    <Compile Include="Sources\TimerHandler.cs" />
     <Page Include="SlackerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

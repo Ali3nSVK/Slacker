@@ -15,6 +15,7 @@ namespace Slacker
         public SlackerWindow()
         {
             InitializeComponent();
+            InitializeTimeProps();
             InitializeSystemTray();
             SettingsUIInit();
         }
@@ -61,18 +62,30 @@ namespace Slacker
 
         private void ToggleSlacking()
         {
+            StopTimer();
+
             if (AmISlacking())
             {
-                StopSlacking();
-                StatusLabel.Content = "Inactive";
-                NotifyIcon.Icon = IconHandles["Stopped"];
+                EndSlacking();
             }
             else
             {
-                StartSlacking(slackerSettings);
-                StatusLabel.Content = "Active";
-                NotifyIcon.Icon = IconHandles["Working"];
+                BeginSlacking();
             }
+        }
+
+        private void BeginSlacking()
+        {
+            StartSlacking(slackerSettings);
+            StatusLabel.Content = "Active";
+            NotifyIcon.Icon = IconHandles["Working"];
+        }
+
+        private void EndSlacking()
+        {
+            TerminateSlacking();
+            StatusLabel.Content = "Inactive";
+            NotifyIcon.Icon = IconHandles["Stopped"];
         }
 
         #region Event Handlers
@@ -128,7 +141,7 @@ namespace Slacker
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            StopSlacking();
+            TerminateSlacking();
             StartSlacking(slackerSettings);
         }
 

@@ -16,7 +16,7 @@ namespace Slacker
             SlackerThread = StartSlackerThread(settings.TimeInterval.Value, settings.KeyPressed, settings.FullKeyPress);
         }
 
-        public void StopSlacking()
+        public void TerminateSlacking()
         {
             if (AmISlacking())
             {

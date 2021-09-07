@@ -52,4 +52,3 @@ jobs:
           prerelease: false
           files: |
             SlackerFiles/Slacker*.exe
-            SlackerFiles/Slacker*.config

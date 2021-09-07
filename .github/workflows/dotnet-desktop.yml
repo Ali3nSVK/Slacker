@@ -42,9 +42,6 @@ jobs:
           name: SlackerFiles
           path: SlackerFiles
       
-      - name: Output Dir
-        run: dir
-      
       - name: Navigate to Artifacts
         run: cd SlackerFiles
         
@@ -54,5 +51,5 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           files: |
-            *.exe
-            *.config
+            SlackerFiles/Slacker*.exe
+            SlackerFiles/Slacker*.config

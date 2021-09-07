@@ -42,11 +42,11 @@ jobs:
           name: SlackerFiles
           path: SlackerFiles
       
-      - name: Navigate to Artifacts
-        run: cd SlackerFiles/SlackerFiles
-      
       - name: Output Dir
         run: dir
+      
+      - name: Navigate to Artifacts
+        run: cd SlackerFiles
         
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:

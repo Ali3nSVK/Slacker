@@ -25,13 +25,6 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore Slacker.sln
 
-    # Build and publish
-    - name: Build and Publish WPF App
+    # Build
+    - name: Build
       run: msbuild.exe Slacker.sln /p:platform="Any CPU" /p:Configuration="Release"
-      
-    # Deploy
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: Slacker
-        path: bin\Release

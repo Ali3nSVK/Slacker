@@ -43,7 +43,7 @@ jobs:
           path: SlackerFiles
       
       - name: Navigate to Artifacts
-        run: cd SlackerFiles
+        run: cd SlackerFiles/SlackerFiles
       
       - name: Output Dir
         run: dir

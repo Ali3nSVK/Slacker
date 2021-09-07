@@ -24,7 +24,18 @@ jobs:
       
     - name: Restore NuGet packages
       run: nuget restore Slacker.sln
-
-    # Build
+      
     - name: Build
       run: msbuild.exe Slacker.sln /p:platform="Any CPU" /p:Configuration="Release"
+      
+  release:
+    
+    runs-on: windows-latest
+    
+    steps:
+      - name: Deploy
+        uses: fnkr/github-action-ghr@v1.3
+        env:
+          GHR_COMPRESS: zip
+          GHR_PATH: bin\Release
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

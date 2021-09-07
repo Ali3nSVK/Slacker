@@ -36,7 +36,7 @@ jobs:
       
     # Deploy
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1.00
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: Slacker
         path: bin\Release

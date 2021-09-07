@@ -27,7 +27,9 @@ jobs:
       run: msbuild.exe Slacker.sln /p:platform="Any CPU" /p:Configuration="Release"
       
     - name: Directory Listing
-      run: dir
+      run: |
+        cd Slacker\bin\Release
+        dir
       
   release:
     needs: build

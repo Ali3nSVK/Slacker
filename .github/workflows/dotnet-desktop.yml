@@ -35,4 +35,4 @@ jobs:
         env:
           GHR_COMPRESS: zip
           GHR_PATH: bin\Release
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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

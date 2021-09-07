@@ -45,6 +45,9 @@ jobs:
       - name: Navigate to Artifacts
         run: cd SlackerFiles
       
+      - name: Output Dir
+        run: dir
+        
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.RELEASE_TOKEN }}"

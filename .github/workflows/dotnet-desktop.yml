@@ -9,30 +9,25 @@ jobs:
 
     runs-on: windows-latest
 
-    env:
-      Solution_Name: Slacker.sln
-
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
 
-    # Setup NuGet
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@v1.0.5
       
-    # Restore pkgs
+    - name: Navigate to workspace
+      run: cd $GITHUB_WORKSPACE
+      
     - name: Restore NuGet packages
       run: nuget restore Slacker.sln
 
     # Build and publish
     - name: Build and Publish WPF App
-      run: msbuild Slacker.sln /p:Configuration=Release /p:DeployOnBuild=true
+      run: msbuild.exe Slacker.sln /p:platform="Any CPU" /p:Configuration="Release"
       
     # Deploy
     - name: Upload Artifact

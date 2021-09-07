@@ -30,11 +30,11 @@ namespace Slacker
         {
             SlackingDurations = new List<TimeDuration>();
 
-            SlackingDurations.Add(new TimeDuration("30 Minutes", new TimeSpan(0, 0, 5)));
-            SlackingDurations.Add(new TimeDuration("1 Hour", new TimeSpan(0, 0, 10)));
-            SlackingDurations.Add(new TimeDuration("2 Hours", new TimeSpan(0, 0, 20)));
-            SlackingDurations.Add(new TimeDuration("4 Hours", new TimeSpan(0, 0, 40)));
-            SlackingDurations.Add(new TimeDuration("8 Hours", new TimeSpan(0, 0, 60)));
+            SlackingDurations.Add(new TimeDuration("30 Minutes", new TimeSpan(0, 30, 0)));
+            SlackingDurations.Add(new TimeDuration("1 Hour", new TimeSpan(1, 0, 0)));
+            SlackingDurations.Add(new TimeDuration("2 Hours", new TimeSpan(2, 0, 0)));
+            SlackingDurations.Add(new TimeDuration("4 Hours", new TimeSpan(4, 0, 0)));
+            SlackingDurations.Add(new TimeDuration("8 Hours", new TimeSpan(8, 0, 0)));
 
             ActivityTimer = new Timer();
         }

@@ -6,4 +6,4 @@ Time interval and key pressed can be set, as well as the ability to use only Key
 
 By default invokes F15 KeyUp every 59 seconds.
 
-Uses simple WPF UI, Threads, WinForms Notification Icon, Timers, Registry to save settings and hooks Win32 DLL for WinAPI calls.
+Uses simple WPF UI, Threads, WinForms Notification Icon, System.Timers.Timer, Registry to save settings and hooks Win32 DLL for WinAPI calls.

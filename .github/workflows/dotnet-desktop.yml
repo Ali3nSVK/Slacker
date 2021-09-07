@@ -27,6 +27,7 @@ jobs:
       run: msbuild.exe Slacker.sln /p:platform="Any CPU" /p:Configuration="Release"
       
   release:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy

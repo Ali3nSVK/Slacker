@@ -41,8 +41,8 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: RNGFiles
-          path: RNGFiles
+          name: SlackerFiles
+          path: SlackerFiles
           
       - name: Create Release
         uses: softprops/action-gh-release@v2

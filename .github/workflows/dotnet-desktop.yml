@@ -35,20 +35,21 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
-          name: SlackerFiles
-          path: SlackerFiles
-      
-      - name: Navigate to Artifacts
-        run: cd SlackerFiles
-        
-      - uses: "marvinpinto/action-automatic-releases@latest"
+          name: RNGFiles
+          path: RNGFiles
+          
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.RELEASE_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
-          files: |
-            SlackerFiles/Slacker*.exe
+          tag_name: latest
+          name: Latest Build
+          body: Automated release from GitHub Actions
+          files: SlackerFiles/Slacker*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
